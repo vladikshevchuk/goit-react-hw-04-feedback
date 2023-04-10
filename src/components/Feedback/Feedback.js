@@ -6,18 +6,6 @@ function Feedback() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const onClickGood = () => {
-    setGood(state => state + 1);
-  };
-
-  const onClickNeutral = () => {
-    setNeutral(state => state + 1);
-  };
-
-  const onClickBad = () => {
-    setBad(state => state + 1);
-  };
-
   const countTotalFeedBack = () => {
     let total = good + neutral + bad;
 
@@ -40,13 +28,13 @@ function Feedback() {
     <section>
       <h2>Please leave feedback</h2>
       <div className="btns">
-        <button type="button" name='good' onClick={onClickGood}>
+        <button type="button" name='good' onClick={() => setGood(state => state + 1)}>
           Good
         </button>
-        <button type="button" onClick={onClickNeutral}>
+        <button type="button" onClick={() => setNeutral(state => state + 1)}>
           Neutral
         </button>
-        <button type="button" onClick={onClickBad}>
+        <button type="button" onClick={() => setBad(state => state + 1)}>
           Bad
         </button>
       </div>
